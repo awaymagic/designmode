@@ -1,4 +1,4 @@
-package com.away.designpattern.strategy;
+package com.away.designpattern.strategy.v1;
 
 /**
  * 《策略模式》
@@ -50,5 +50,26 @@ class FlagZombie extends AbstractZombie {
     @Override
     public void display() {
         System.out.println("我是旗手僵尸...");
+    }
+}
+
+class BigHeadZombie extends AbstractZombie {
+    @Override
+    public void display() {
+        System.out.println("我是大头僵尸...");
+    }
+
+    @Override
+    public void attack() {
+        // ...
+        System.out.println("头撞...");
+    }
+}
+
+class XxxZombie extends BigHeadZombie {
+
+    @Override
+    public void move() {
+        super.move();
     }
 }
