@@ -25,6 +25,9 @@ public class ChainOfResponsibilityTest {
 }
 
 class Request{
+    /**
+     * 业务代码解析得出是否执行
+     */
     private boolean loggedOn;
     private boolean frequentOk;
     private boolean isPermits;

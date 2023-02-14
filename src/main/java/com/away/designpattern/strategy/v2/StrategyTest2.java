@@ -26,16 +26,18 @@ public class StrategyTest2 {
     }
 }
 
+/** 移动行为 */
 interface Moveable {
     void move();
 }
 
+/** 攻击方式 */
 interface Attackable {
     void attack();
 }
 
 abstract class Zombie{
-    abstract public void display();
+    public abstract void display();
     Moveable moveable;
     Attackable attackable;
     abstract void move();
