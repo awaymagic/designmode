@@ -1,5 +1,7 @@
 package com.away.designpattern.chainofresponsibility;
 
+import java.util.Objects;
+
 /**
  * 《责任链模式》
  * 场景：一个请求的处理需要多个对象当中的一个或几个协助处理。
@@ -134,12 +136,8 @@ class RequestFrequentHandler extends Handler {
                 // 所有的都已处理完
                 return true;
             }
-            if (!next.process(request)) {
-                // 处理结果失败
-                return false;
-            } else {
-                return true;
-            }
+            // 处理结果失败
+            return next.process(request);
         }
         return false;
     }
@@ -158,7 +156,7 @@ class LoggingHandler extends Handler {
         System.out.println("登陆访问...");
         if (request.isLoggedOn()) {
             Handler next = getNext();
-            if (next == next) {
+            if (Objects.equals(next, next)) {
                 return true;
             }
             if (!next.process(request)) {
